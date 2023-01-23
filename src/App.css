@@ -1,3 +1,10 @@
+.main-bg {
+  height: 31.25rem;
+  background-image: url("./assets/mainImage.webp");
+  background-size: contain;
+  background-position: center;
+}
+
 .App {
   text-align: center;
 }
