@@ -118,3 +118,11 @@ function About() {
 ```javascript
 <Route path="*" element={<div>없는 페이지입니다.</div>}></Route>
 ```
+
+## URL 파라미터
+
+URL을 통해서 파라미터 전송
+
+```javascript
+<Route path="/detail/:id" element={Detail products={products}}>
+```

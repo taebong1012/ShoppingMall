@@ -1,22 +1,21 @@
-import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
+function detail(props) {
+  let { id } = useParams();
 
-function detail() {
   return (
     <div className="container">
       <Row>
-        <div className="col-md-6">
-          <img
-            src="https://codingapple1.github.io/shop/shoes1.jpg"
-            width="100%"
-          />
-        </div>
-        <div className="col-md-6">
-          <h4 className="pt-5">상품명</h4>
-          <p>상품설명</p>
-          <p>120000원</p>
+        <Col>
+          <img src={props.products[id].imgUrl} width="100%" />
+        </Col>
+        <Col>
+          <h4 className="pt-5">{props.products[id].title}</h4>
+          <p>{props.products[id].content}</p>
+          <p>{props.products[id].price}원</p>
           <button className="btn btn-danger">주문하기</button>
-        </div>
+        </Col>
       </Row>
     </div>
   );

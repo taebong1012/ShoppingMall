@@ -28,7 +28,7 @@ function App() {
           <Navbar.Brand href="#home">AppleShop</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/detail">Features</Nav.Link>
+            <Nav.Link href="/detail">Detail</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
           </Nav>
         </Container>
@@ -51,7 +51,7 @@ function App() {
             </>
           }
         />
-        <Route path="/detail" element={<Detail />}></Route>
+        <Route path="/detail/:id" element={<Detail products={products} />}></Route>
         <Route path="*" element={<div>없는 페이지입니다.</div>}></Route>
         <Route path="/about" element={<About />}>
           <Route path="member" element={<div>멤버임</div>}></Route>
