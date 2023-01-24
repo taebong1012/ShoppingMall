@@ -1,7 +1,7 @@
 .main-bg {
   height: 31.25rem;
   background-image: url("./assets/mainImage.webp");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 }
 
