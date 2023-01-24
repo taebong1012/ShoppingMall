@@ -58,5 +58,63 @@ import { Routes, Route, Link } from "react-router-dom";
 ```javascript
 function App() {
   let navigate = useNavigate();
+
+  return (
+    //1. 이전 페이지로 이동 (1)
+    <Nav.Link
+      onClick={() => {
+        navigate(1);
+      }}
+    >
+      이전 페이지
+    </Nav.Link>
+    //2. 다음 페이지로 이동 (-1)
+    <Nav.Link
+      onClick={() => {
+        navigate(-1);
+      }}
+    >
+      다음 페이지
+    </Nav.Link>
+    //3. 특정 페이지로 이동 (ex. detail)
+    <Nav.Link
+      onClick={() => {
+        navigate("/detail");
+      }}
+    >
+    detail 페이지
+  );
 }
+```
+
+## nested routes
+
+라우터 안에 라우터, 여러 유사한 페이지가 필요할 때 사용
+
+```javascript
+function App() {
+  return (
+    <Route path="/about" element={<About />}>
+      <Route path="member" element={<Member />}></Route>
+      <Route path="location" element={<Location />}></Route>
+    </Route>
+  );
+}
+
+function About() {
+  return (
+    <>
+      <div>정보페이지</div>
+      <Outlet />
+    </>
+  );
+}
+```
+
+## 404 페이지
+
+유효하지 않은 링크로 접속 했을 경우 띄워줄 페이지
+
+```javascript
+<Route path="*" element={<div>없는 페이지입니다.</div>}></Route>
 ```
